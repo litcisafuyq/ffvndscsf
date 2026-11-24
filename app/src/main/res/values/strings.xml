@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">A17 Assist</string>
+    <string name="a11y_service_label">A17 Assist - Hỗ trợ cử chỉ chạm</string>
+    <string name="a11y_desc">A17 Assist cần quyền trợ năng để gửi thao tác chạm vào Free Fire.</string>
+    <string name="a11y_service_description">Dùng AccessibilityService dispatchGesture làm dự phòng khi Shizuku chưa sẵn sàng. Không đọc nội dung màn hình game.</string>
+
+    <string name="nav_home">Trang chủ</string>
+    <string name="nav_setup">Thiết lập</string>
+    <string name="nav_config">Cấu hình</string>
+    <string name="nav_about">Giới thiệu</string>
+
+    <string name="btn_launch_ff">Vào Free Fire</string>
+    <string name="btn_start_overlay">Bật Overlay ngay</string>
+    <string name="btn_stop_overlay">Tắt Overlay</string>
+    <string name="btn_emergency_kill">Tắt khẩn cấp</string>
+    <string name="btn_recheck">Kiểm tra lại</string>
+
+    <string name="status_shizuku_ok">Shizuku OK (Xanh)</string>
+    <string name="status_a11y_fallback">Đang dùng Trợ năng A11y (Vàng)</string>
+    <string name="status_no_permission">Chưa cấp quyền Inject (Đỏ)</string>
+
+    <string name="notif_channel_name">A17 Assist Overlay</string>
+    <string name="notif_channel_desc">Dịch vụ điều khiển bong bóng nổi và cử chỉ hỗ trợ</string>
+    <string name="notif_title">A17 Assist đang chạy</string>
+    <string name="notif_text_waiting">Đang chờ vào Free Fire…</string>
+    <string name="notif_text_active">Đang hoạt động trong Free Fire</string>
+    <string name="notif_action_stop">Dừng</string>
+
+    <string name="setup_title">Thiết lập 3 bước</string>
+    <string name="setup_subtitle">Cấp đủ quyền chuẩn Android để bong bóng nổi và inject chạm hoạt động ổn định, không root.</string>
+    <string name="setup_step1_title">Bước 1: Quyền Hiển thị &amp; Thông báo</string>
+    <string name="setup_step1_desc">Cho phép hiện bong bóng nổi trên ứng dụng khác (SYSTEM_ALERT_WINDOW) và thông báo dịch vụ nền.</string>
+    <string name="setup_step2_title">Bước 2: Quyền Truy cập sử dụng</string>
+    <string name="setup_step2_desc">Cho phép GameWatcher nhận biết khi Free Fire ở tiền cảnh và tự ngủ sau 3 giây khi thoát game.</string>
+    <string name="setup_step3_title">Bước 3: Quyền Inject chạm (Shizuku / A11y)</string>
+    <string name="setup_step3_desc">Ưu tiên cấp quyền Shizuku để inject mượt 60Hz qua InputManager. Nếu chưa bật Shizuku, có thể bật Trợ năng (Accessibility) để dự phòng (bubble vàng).</string>
+
+    <string name="about_disclaimer_title">Lưu ý quan trọng về Anti-Ban</string>
+    <string name="about_disclaimer_body">Không có aimlock nào chống ban tuyệt đối. A17 Assist tránh hoàn toàn mọi kỹ thuật bị Garena quét: không root, không đọc/ghi bộ nhớ game, không hook tiến trình, không mod APK, không dùng MediaProjection, không tự bắn và không cướp focus của game.</string>
+</resources>

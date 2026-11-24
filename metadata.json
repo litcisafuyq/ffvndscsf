@@ -1,0 +1,6 @@
+{
+  "name": "A17 Assist",
+  "description": "Công cụ hỗ trợ điều chỉnh thao tác vuốt cảm ứng và thông số độ nhạy cho Free Fire qua Shizuku / Accessibility.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

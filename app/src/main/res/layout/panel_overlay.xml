@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="match_parent"
+    android:background="#E6000000"
+    android:orientation="vertical"
+    android:padding="14dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="A17 ASSIST"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/close"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Đóng"
+            android:src="@drawable/ic_close" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/kill"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#FF5252"
+        android:text="@string/btn_emergency_kill"
+        android:textColor="#FFFFFF" />
+
+    <Switch
+        android:id="@+id/sw_master"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Công tắc tổng (Master)"
+        android:textColor="#FFFFFF" />
+
+    <Switch
+        android:id="@+id/sw_pad"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Vùng đệm kích hoạt (Pad)"
+        android:textColor="#FFFFFF" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <SeekBar
+                android:id="@+id/s_lock"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:max="30"
+                android:progress="17" />
+            <TextView
+                android:id="@+id/tv_s_lock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:text="lock_strength: 72%"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <SeekBar
+                android:id="@+id/s_light"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:max="28"
+                android:progress="13" />
+            <TextView
+                android:id="@+id/tv_s_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:text="aim_lightness: 65%"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <SeekBar
+                android:id="@+id/s_mult"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:max="80"
+                android:progress="25" />
+            <TextView
+                android:id="@+id/tv_s_mult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:text="pull_multiplier: 1.05x"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <SeekBar
+                android:id="@+id/s_sens"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:max="200"
+                android:progress="170" />
+            <TextView
+                android:id="@+id/tv_s_sens"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:text="Độ nhạy chung: 170"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <SeekBar
+                android:id="@+id/s_sens_fire"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:max="200"
+                android:progress="160" />
+            <TextView
+                android:id="@+id/tv_s_sens_fire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:text="Độ nhạy bắn: 160"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <SeekBar
+                android:id="@+id/s_sens_scope"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:max="200"
+                android:progress="150" />
+            <TextView
+                android:id="@+id/tv_s_sens_scope"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:text="Độ nhạy ngắm: 150"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

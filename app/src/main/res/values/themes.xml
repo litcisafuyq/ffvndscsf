@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.A17Assist" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/accent_emerald</item>
+        <item name="colorOnPrimary">@color/bg_obsidian</item>
+        <item name="colorSecondary">@color/accent_cyan</item>
+        <item name="colorOnSecondary">@color/bg_obsidian</item>
+        <item name="colorError">@color/status_red</item>
+        <item name="android:windowBackground">@color/bg_obsidian</item>
+        <item name="colorSurface">@color/surface_card</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorSurfaceVariant">@color/surface_elevated</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/bg_obsidian</item>
+        <item name="android:fontFamily">@font/space_grotesk</item>
+        <item name="fontFamily">@font/space_grotesk</item>
+    </style>
+
+    <style name="A17.Slider" parent="Widget.Material3.Slider">
+        <item name="trackColorActive">@color/accent_emerald</item>
+        <item name="trackColorInactive">@color/surface_elevated</item>
+        <item name="thumbColor">@color/accent_emerald</item>
+        <item name="haloColor">@color/accent_emerald_dim</item>
+    </style>
+
+    <style name="A17.Switch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+        <item name="thumbTint">@color/white</item>
+        <item name="trackTint">@color/switch_track_tint</item>
+    </style>
+</resources>

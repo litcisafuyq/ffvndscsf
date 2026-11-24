@@ -1,0 +1,127 @@
+{
+  "master": true,
+  "assist_strength": {
+    "lock_strength": 72,
+    "aim_lightness": 65,
+    "pull_multiplier": 1.05,
+    "head_anchor_px": 13.0,
+    "max_total_pull_px": 24.0,
+    "max_step_px": 3.0,
+    "ramp_ms": 100
+  },
+  "decision_logic": {
+    "head_lock": true,
+    "neck_fallback": true,
+    "ignore_prone": true,
+    "zone_priority": ["HEAD", "NECK", "CHEST"],
+    "hysteresis_ms": 100,
+    "switch_penalty_ms": 60,
+    "prefer_neck_when_chest_locked": true,
+    "miss_soft_lock_threshold": 2,
+    "active_distance_mode": "NEAR"
+  },
+  "distance_profiles": {
+    "near": {
+      "min_m": 0,
+      "max_m": 15,
+      "anchor_px": 13.0,
+      "cap_multiplier": 1.0,
+      "ramp_ms": 100
+    },
+    "mid": {
+      "min_m": 15,
+      "max_m": 40,
+      "anchor_px": 7.0,
+      "cap_multiplier": 0.85,
+      "ramp_ms": 120
+    },
+    "far": {
+      "min_m": 40,
+      "max_m": 99,
+      "anchor_px": 3.0,
+      "cap_multiplier": 0.75,
+      "ramp_ms": 150
+    },
+    "hysteresis_px": 6.0
+  },
+  "behavior_simulation": {
+    "early_guard_ms": 65,
+    "reaction_min_ms": 140,
+    "reaction_max_ms": 175,
+    "reacquire_skip_ms": 300,
+    "jitter": 0.10,
+    "creep": true,
+    "creep_px_s": 0.9,
+    "creep_max_ms": 400,
+    "release_return_pct": 0.55,
+    "release_return_ms": 55,
+    "settle_ms": 130,
+    "overshoot": true,
+    "undershoot_pct": 0.02,
+    "overshoot_pct": 0.03,
+    "stutter_compensation": true,
+    "stutter_threshold_ms": 35,
+    "curve_friction": 0.30
+  },
+  "finger_feedback": {
+    "haptic": true,
+    "hud": true,
+    "head_pattern_ms": [20, 45, 20],
+    "miss_pattern_ms": [32],
+    "haptic_throttle_ms": 450
+  },
+  "controls_config": {
+    "general_sens": 170,
+    "fire_sens": 160,
+    "scope_sens": 150,
+    "sens_min": 0,
+    "sens_max": 200
+  },
+  "anti_cheat_stealth": {
+    "thermal_guard": true,
+    "ram_guard": true,
+    "burst_governor": true,
+    "tap_mode_fallback": true,
+    "max_events_per_sec": 60,
+    "game_exit_sleep_ms": 3000,
+    "burst_limit": 2,
+    "burst_debounce_ms": 110,
+    "double_tap_merge_ms": 90,
+    "ram_low_threshold_mb": 400
+  },
+  "safety_caps": {
+    "min_lock_strength": 55,
+    "max_lock_strength": 85,
+    "min_aim_lightness": 52,
+    "max_aim_lightness": 80,
+    "min_pull_multiplier": 0.8,
+    "max_pull_multiplier": 1.6,
+    "min_head_anchor_px": 8.0,
+    "max_head_anchor_px": 18.0,
+    "min_total_pull_px": 12.0,
+    "max_total_pull_px": 24.0,
+    "min_step_px": 1.0,
+    "max_step_px": 3.0,
+    "min_ramp_ms": 80,
+    "max_ramp_ms": 150,
+    "min_creep_px_s": 0.5,
+    "max_creep_px_s": 1.5,
+    "min_release_return_pct": 0.4,
+    "max_release_return_pct": 0.7,
+    "min_reaction_ms": 120,
+    "max_reaction_ms": 180,
+    "min_jitter": 0.05,
+    "max_jitter": 0.15,
+    "max_events_per_sec": 60
+  },
+  "calibration": {
+    "ref_height": 1200,
+    "ref_dpi": 384,
+    "base_factor": 0.513,
+    "fire_button_x_ratio": 0.84,
+    "fire_button_y_ratio": 0.72,
+    "fire_button_radius_dp": 44,
+    "bubble_x": 36,
+    "bubble_y": 260
+  }
+}

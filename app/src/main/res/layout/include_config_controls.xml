@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="16dp">
+
+    <!-- Distance Profile Selector -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:text="Hồ sơ cự ly (Distance Profile)"
+        android:textColor="@color/accent_cyan"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggle_distance_mode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
+        app:selectionRequired="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_dist_near"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="Gần (0-15m)"
+            android:textSize="11sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_dist_mid"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="Trung (15-40m)"
+            android:textSize="11sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_dist_far"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="Xa (40-99m)"
+            android:textSize="11sp" />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <!-- Section: Assist & Pull -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:text="LỰC KÉO &amp; KHÓA ĐẦU (SAFETY CAPS)"
+        android:textColor="@color/accent_emerald"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+
+    <!-- lock_strength 55..85 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="lock_strength (55–85%)"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp" />
+        <TextView
+            android:id="@+id/tv_lock_strength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jetbrains_mono"
+            android:text="72%"
+            android:textColor="@color/accent_emerald"
+            android:textSize="13sp" />
+    </LinearLayout>
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_lock_strength"
+        style="@style/A17.Slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stepSize="1"
+        android:value="72"
+        android:valueFrom="55"
+        android:valueTo="85" />
+
+    <!-- aim_lightness 52..80 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="aim_lightness (52–80%)"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp" />
+        <TextView
+            android:id="@+id/tv_aim_lightness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jetbrains_mono"
+            android:text="65%"
+            android:textColor="@color/accent_emerald"
+            android:textSize="13sp" />
+    </LinearLayout>
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_aim_lightness"
+        style="@style/A17.Slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stepSize="1"
+        android:value="65"
+        android:valueFrom="52"
+        android:valueTo="80" />
+
+    <!-- pull_multiplier 0.8..1.6 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="pull_multiplier (0.8–1.6x)"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp" />
+        <TextView
+            android:id="@+id/tv_pull_multiplier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jetbrains_mono"
+            android:text="1.05x"
+            android:textColor="@color/accent_emerald"
+            android:textSize="13sp" />
+    </LinearLayout>
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_pull_multiplier"
+        style="@style/A17.Slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stepSize="0.05"
+        android:value="1.05"
+        android:valueFrom="0.8"
+        android:valueTo="1.6" />
+
+    <!-- Section: Sensitivity 0-200 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="6dp"
+        android:text="ĐỘ NHẠY GAME (0–200)"
+        android:textColor="@color/accent_cyan"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+
+    <!-- general_sens 0..200 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Độ nhạy chung"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp" />
+        <TextView
+            android:id="@+id/tv_general_sens"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jetbrains_mono"
+            android:text="170"
+            android:textColor="@color/accent_cyan"
+            android:textSize="13sp" />
+    </LinearLayout>
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_general_sens"
+        style="@style/A17.Slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stepSize="1"
+        android:value="170"
+        android:valueFrom="0"
+        android:valueTo="200" />
+
+    <!-- fire_sens 0..200 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Độ nhạy bắn (Red Dot)"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp" />
+        <TextView
+            android:id="@+id/tv_fire_sens"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jetbrains_mono"
+            android:text="160"
+            android:textColor="@color/accent_cyan"
+            android:textSize="13sp" />
+    </LinearLayout>
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_fire_sens"
+        style="@style/A17.Slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stepSize="1"
+        android:value="160"
+        android:valueFrom="0"
+        android:valueTo="200" />
+
+    <!-- scope_sens 0..200 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Độ nhạy ngắm (Scope)"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp" />
+        <TextView
+            android:id="@+id/tv_scope_sens"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jetbrains_mono"
+            android:text="150"
+            android:textColor="@color/accent_cyan"
+            android:textSize="13sp" />
+    </LinearLayout>
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_scope_sens"
+        style="@style/A17.Slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stepSize="1"
+        android:value="150"
+        android:valueFrom="0"
+        android:valueTo="200" />
+
+    <!-- Section: Geometry & Timing -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="6dp"
+        android:text="ĐỘNG HỌC &amp; ĐƯỜNG CONG BEZIER"
+        android:textColor="@color/accent_emerald"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+
+    <!-- head_anchor_px 8..18 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="head_anchor_px (8–18 px)"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp" />
+        <TextView
+            android:id="@+id/tv_head_anchor_px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jetbrains_mono"
+            android:text="13.0 px"
+            android:textColor="@color/accent_emerald"
+            android:textSize="13sp" />
+    </LinearLayout>
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_head_anchor_px"
+        style="@style/A17.Slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stepSize="0.5"
+        android:value="13"
+        android:valueFrom="8"
+        android:valueTo="18" />
+
+    <!-- max_total_pull_px 12..24 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="max_total_pull_px (12–24 px)"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp" />
+        <TextView
+            android:id="@+id/tv_max_total_pull_px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jetbrains_mono"
+            android:text="24.0 px"
+            android:textColor="@color/accent_emerald"
+            android:textSize="13sp" />
+    </LinearLayout>
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_max_total_pull_px"
+        style="@style/A17.Slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stepSize="0.5"
+        android:value="24"
+        android:valueFrom="12"
+        android:valueTo="24" />
+
+    <!-- max_step_px 1..3 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="max_step_px (1–3 px)"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp" />
+        <TextView
+            android:id="@+id/tv_max_step_px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jetbrains_mono"
+            android:text="3.0 px"
+            android:textColor="@color/accent_emerald"
+            android:textSize="13sp" />
+    </LinearLayout>
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_max_step_px"
+        style="@style/A17.Slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stepSize="0.25"
+        android:value="3"
+        android:valueFrom="1"
+        android:valueTo="3" />
+
+    <!-- ramp_ms 80..150 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ramp_ms (80–150 ms)"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp" />
+        <TextView
+            android:id="@+id/tv_ramp_ms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jetbrains_mono"
+            android:text="100 ms"
+            android:textColor="@color/accent_emerald"
+            android:textSize="13sp" />
+    </LinearLayout>
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_ramp_ms"
+        style="@style/A17.Slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stepSize="5"
+        android:value="100"
+        android:valueFrom="80"
+        android:valueTo="150" />
+
+    <!-- creep_px_s 0.5..1.5 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="creep_px_s (0.5–1.5 px/s)"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp" />
+        <TextView
+            android:id="@+id/tv_creep_px_s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jetbrains_mono"
+            android:text="0.90 px/s"
+            android:textColor="@color/accent_emerald"
+            android:textSize="13sp" />
+    </LinearLayout>
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_creep_px_s"
+        style="@style/A17.Slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stepSize="0.05"
+        android:value="0.9"
+        android:valueFrom="0.5"
+        android:valueTo="1.5" />
+
+    <!-- release_return_pct 0.4..0.7 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="release_return_pct (40–70%)"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp" />
+        <TextView
+            android:id="@+id/tv_release_return_pct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jetbrains_mono"
+            android:text="55%"
+            android:textColor="@color/accent_emerald"
+            android:textSize="13sp" />
+    </LinearLayout>
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_release_return_pct"
+        style="@style/A17.Slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stepSize="0.05"
+        android:value="0.55"
+        android:valueFrom="0.4"
+        android:valueTo="0.7" />
+
+    <!-- reaction_ms 120..180 range -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="reaction_ms (120–180 ms)"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp" />
+        <TextView
+            android:id="@+id/tv_reaction_ms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jetbrains_mono"
+            android:text="140–175 ms"
+            android:textColor="@color/accent_emerald"
+            android:textSize="13sp" />
+    </LinearLayout>
+    <com.google.android.material.slider.RangeSlider
+        android:id="@+id/slider_reaction_ms"
+        style="@style/A17.Slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stepSize="5"
+        android:valueFrom="120"
+        android:valueTo="180"
+        app:values="@array/default_reaction_range" />
+
+    <!-- jitter 0.05..0.15 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="jitter (0.05–0.15)"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp" />
+        <TextView
+            android:id="@+id/tv_jitter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jetbrains_mono"
+            android:text="0.10"
+            android:textColor="@color/accent_emerald"
+            android:textSize="13sp" />
+    </LinearLayout>
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_jitter"
+        style="@style/A17.Slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stepSize="0.01"
+        android:value="0.10"
+        android:valueFrom="0.05"
+        android:valueTo="0.15" />
+
+    <!-- Section: 12 Individual Switches -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="6dp"
+        android:text="CÔNG TẮC CHỨC NĂNG &amp; BẢO VỆ"
+        android:textColor="@color/accent_cyan"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/sw_head_lock"
+        style="@style/A17.Switch"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="head_lock (Ưu tiên khóa đầu)"
+        android:textColor="@color/text_primary"
+        android:textSize="13sp" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/sw_neck_fallback"
+        style="@style/A17.Switch"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="neck_fallback (Hạ về cổ khi miss)"
+        android:textColor="@color/text_primary"
+        android:textSize="13sp" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/sw_thermal_guard"
+        style="@style/A17.Switch"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="thermal_guard (Giảm lực 10p/20p)"
+        android:textColor="@color/text_primary"
+        android:textSize="13sp" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/sw_ram_guard"
+        style="@style/A17.Switch"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="ram_guard (Bảo vệ RAM &lt; 400MB)"
+        android:textColor="@color/text_primary"
+        android:textSize="13sp" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/sw_haptic"
+        style="@style/A17.Switch"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="haptic (Rung phản hồi 20-45-20)"
+        android:textColor="@color/text_primary"
+        android:textSize="13sp" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/sw_hud"
+        style="@style/A17.Switch"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="hud (Hiện HUD xuyên chạm)"
+        android:textColor="@color/text_primary"
+        android:textSize="13sp" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/sw_creep"
+        style="@style/A17.Switch"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="creep (Bám tâm sau ramp 400ms)"
+        android:textColor="@color/text_primary"
+        android:textSize="13sp" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/sw_stutter_compensation"
+        style="@style/A17.Switch"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="stutter_compensation (Bù lag &gt;35ms)"
+        android:textColor="@color/text_primary"
+        android:textSize="13sp" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/sw_overshoot"
+        style="@style/A17.Switch"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="overshoot (Vượt nhẹ 3% tự nhiên)"
+        android:textColor="@color/text_primary"
+        android:textSize="13sp" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/sw_burst_governor"
+        style="@style/A17.Switch"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="burst_governor (Giới hạn nhịp 110ms)"
+        android:textColor="@color/text_primary"
+        android:textSize="13sp" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/sw_tap_mode_fallback"
+        style="@style/A17.Switch"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="tap_mode_fallback (Kích hoạt phím âm lượng)"
+        android:textColor="@color/text_primary"
+        android:textSize="13sp" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/sw_ignore_prone"
+        style="@style/A17.Switch"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="ignore_prone (Bỏ qua mục tiêu nằm)"
+        android:textColor="@color/text_primary"
+        android:textSize="13sp" />
+
+</LinearLayout>

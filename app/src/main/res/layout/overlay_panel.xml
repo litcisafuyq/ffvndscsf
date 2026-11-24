@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/panel_scrim"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/scrim_panel">
+
+    <LinearLayout
+        android:id="@+id/panel_drawer"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="@drawable/bg_panel_right"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical"
+        android:paddingTop="28dp"
+        android:paddingBottom="16dp">
+
+        <!-- Header: Title + X button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="14dp"
+            android:paddingBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A17 ASSIST"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_panel_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/jetbrains_mono"
+                    android:text="TẠM DỪNG KHI MỞ PANEL"
+                    android:textColor="@color/status_yellow"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btn_panel_close"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Đóng bảng chỉnh"
+                android:src="@drawable/ic_close"
+                app:tint="@color/text_primary" />
+        </LinearLayout>
+
+        <!-- Master Switch & Emergency Kill -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="14dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bg_card_tactical"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/sw_panel_master"
+                style="@style/A17.Switch"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Công tắc tổng (Master)"
+                android:textColor="@color/accent_emerald"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_emergency_kill"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:backgroundTint="@color/status_red"
+                android:text="@string/btn_emergency_kill"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:cornerRadius="12dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider_subtle" />
+
+        <!-- Scrollable live controls (auto-save immediately, no Save button) -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingHorizontal="14dp"
+            android:paddingTop="10dp"
+            android:scrollbars="vertical">
+
+            <include
+                android:id="@+id/panel_controls"
+                layout="@layout/include_config_controls" />
+        </ScrollView>
+
+    </LinearLayout>
+
+</FrameLayout>
